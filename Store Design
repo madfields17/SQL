@@ -1,0 +1,18 @@
+CREATE TABLE storemads (ID INTEGER PRIMARY KEY, clothingitem TEXT, quantity INTEGER, material TEXT, size TEXT);
+INSERT INTO storemads VALUES (001, "dress", 20, "linen", "medium");
+INSERT INTO storemads VALUES (002, "pants", 10, "cotton", "large");
+INSERT INTO storemads VALUES (003, "pants", 30, "cotton", "medium");
+INSERT INTO storemads VALUES (004, "shoes", 10, "leather", "one size fits all");
+INSERT INTO storemads VALUES (005, "shoes", 5, "cloth", "medium");
+INSERT INTO storemads VALUES (006, "dress", 20, "linen", "small");
+INSERT INTO storemads VALUES (007, "dress", 20, "linen", "large");
+INSERT INTO storemads VALUES (008, "dress", 20, "linen", "extra large");
+INSERT INTO storemads VALUES (009, "dress", 20, "linen", "extra extra large");
+INSERT INTO storemads VALUES (010, "shoes", 20, "linen", "small");
+INSERT INTO storemads VALUES (011, "blouse", 20, "linen", "small");
+INSERT INTO storemads VALUES (012, "blouse", 20, "linen", "medium");
+INSERT INTO storemads VALUES (013, "blouse", 20, "linen", "large");
+INSERT INTO storemads VALUES (014, "blouse", 20, "linen", "extra large");
+INSERT INTO storemads VALUES (015, "blouse", 20, "linen", "extra extra large");
+SELECT SUM (quantity) FROM storemads ORDER BY ID;
+SELECT * FROM storemads;
