@@ -1,0 +1,13 @@
+CREATE TABLE slopes (id INTEGER, name TEXT, avg_speed INTEGER, vertical_distance INTEGER);
+INSERT INTO slopes VALUES (1, "Madison", 15, 1.5);
+INSERT INTO slopes VALUES (2, "Shane", 20, 2);
+INSERT INTO slopes VALUES (3, "Caroline", 25, 1.9);
+INSERT INTO slopes VALUES (4, "Emma", 10, 1);
+INSERT INTO slopes VALUES (5, "Jack", 12, 1.8);
+SELECT * FROM slopes;
+UPDATE slopes SET avg_speed = 17 WHERE id=1;
+SELECT * FROM slopes;
+UPDATE slopes SET vertical_distance=2 WHERE ID=1;
+SELECT * FROM slopes;
+DELETE FROM slopes WHERE id=5;
+SELECT * FROM slopes;
