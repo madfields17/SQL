@@ -1,0 +1,41 @@
+CREATE TABLE songwriters (name TEXT, song_name TEXT, billboard_chart TEXT, billboard_chart_peak INTEGER);
+INSERT INTO songwriters VALUES ("Meghan Trainor", "All About That Bass", "Yes", 1);
+INSERT INTO songwriters VALUES ("Charlie Puth", "See You Again", "Yes", 1);
+INSERT INTO songwriters VALUES ("Bruce Springsteen", "I'm On Fire","Yes", 6);
+INSERT INTO songwriters VALUES ("Miley Cyrus", "Nightcrawling", "No","NULL");
+INSERT INTO songwriters VALUES ("Doja Cat", "Streets", "Yes", 16);
+INSERT INTO songwriters VALUES ("SZA", "Drew Barrymore", "No", "NULL");
+INSERT INTO songwriters VALUES ("Jack Harlow", "First Class", "Yes", 1);
+INSERT INTO songwriters VALUES ("Dua Lipa", "Levitating", "Yes", 1);
+INSERT INTO songwriters VALUES ("Dove Cameron", "Boyfriend", "Yes", 16);
+INSERT INTO songwriters VALUES ("Olivia Rodrigo", "Driver's License", "Yes", 1);
+INSERT INTO songwriters VALUES ("Taylor Swift", "Gold Rush", "Yes", 40);
+INSERT INTO songwriters VALUES ("Adele", "Hello", "Yes", 1);
+INSERT INTO songwriters VALUES ("Rihanna", "Umbrella", "Yes", 1);
+INSERT INTO songwriters VALUES ("Beyonce", "Halo", "Yes", 5);
+INSERT INTO songwriters VALUES ("Britney Spears", "Baby One More Time", "Yes", 1);
+SELECT * FROM songwriters;
+
+
+CREATE TABLE songwriters_hometown (name TEXT, hometown TEXT);
+INSERT INTO songwriters_hometown VALUES("Meghan Trainor", "Nantucket, Mass");
+INSERT INTO songwriters_hometown VALUES ("Charlie Puth", "Rumson, New Jersey");
+INSERT INTO songwriters_hometown VALUES ("Bruce Springsteen", "Freehold, New Jersey");
+INSERT INTO songwriters_hometown VALUES ("Miley Cyrus", "Franklin, Tennessee");
+INSERT INTO songwriters_hometown VALUES ("Doja Cat", "Los Angeles, California");
+INSERT INTO songwriters_hometown VALUES ("SZA", "St. Louis, Missouri");
+INSERT INTO songwriters_hometown VALUES ("Jack Harlow", "Louisville, Kentucky");
+INSERT INTO songwriters_hometown VALUES ("Dua Lipa", "London, England");
+INSERT INTO songwriters_hometown VALUES ("Dove Cameron","Bainbridge Island, Washington");
+INSERT INTO songwriters_hometown VALUES ("Olivia Rodrigo", "Murietta, California");
+INSERT INTO songwriters_hometown VALUES ("Taylor Swift", "West Reading, Pennsylvania");
+INSERT INTO songwriters_hometown VALUES ("Adele", "London, England");
+INSERT INTO songwriters_hometown VALUES ("Rihanna", "St. Michael parish, Barbados");
+INSERT INTO songwriters_hometown VALUES ("Beyonce", "Houston, Texas");
+INSERT INTO songwriters_hometown VALUES ("Britney Spears", "McComb, Mississippi");
+SELECT * from songwriters_hometown;
+
+
+SELECT songwriters.name, song_name, hometown FROM songwriters
+JOIN songwriters_hometown
+ON songwriters.name = songwriters_hometown.name
