@@ -1,3 +1,5 @@
+#In this SQL code, I used an app I was using during my winter vacation, Slopes, for skiing, to mimic data that I was collecting as I was skiing. 
+
 CREATE TABLE slopes (id INTEGER, name TEXT, avg_speed INTEGER, vertical_distance INTEGER);
 INSERT INTO slopes VALUES (1, "Madison", 15, 1.5);
 INSERT INTO slopes VALUES (2, "Shane", 20, 2);
