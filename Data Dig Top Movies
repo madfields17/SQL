@@ -1,3 +1,5 @@
+# In this SQL code, I am querying a movie database to find different information such as the maximum/minimum/average worldwide box office $, top ranked movies, and grouping the movies by their domestic box office $.
+
 /* Put your data in here and query it! */
 /* Source: http://www.boxofficemojo.com/alltime/world/ */
 CREATE TABLE topmovies(
