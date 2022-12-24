@@ -1,3 +1,5 @@
+#I wrote this SQL code and created two different tables listing different songwriters and song information. I joined the tables to display the songwriter with their hometown and name of one of their songs.
+
 CREATE TABLE songwriters (name TEXT, song_name TEXT, billboard_chart TEXT, billboard_chart_peak INTEGER);
 INSERT INTO songwriters VALUES ("Meghan Trainor", "All About That Bass", "Yes", 1);
 INSERT INTO songwriters VALUES ("Charlie Puth", "See You Again", "Yes", 1);
