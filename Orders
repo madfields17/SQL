@@ -1,0 +1,26 @@
+In this SQL I queried a database to answer various questions on orders placed on varying months.
+
+#How Many orders were placed in January?
+SELECT COUNT(orderid)
+FROM BIT_DB.JanSales
+WHERE orderid <> '' 
+AND orderid <> 'Order ID';
+
+#How many of those orders were for an iPhone?
+SELECT COUNT(orderid)
+FROM BIT_DB.JanSales
+WHERE Product="iphone"
+AND orderid <> '' 
+AND orderid <> 'Order ID'
+
+#Select the customer account numbers for all the orders that were placed in February.
+
+SELECT distinct acctnum 
+FROM Bit_DB.customers cust; 
+
+SELECT distinct acctnum 
+FROM BIT_DB.customers
+INNER JOIN BIT_DB.FebSales 
+ON customers.order_id=FebSales.orderid
+WHERE order_id <> '' 
+AND order_id <> 'Order ID';
