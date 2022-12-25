@@ -24,3 +24,10 @@ INNER JOIN BIT_DB.FebSales
 ON customers.order_id=FebSales.orderid
 WHERE order_id <> '' 
 AND order_id <> 'Order ID';
+
+#Which product was the cheapest one sold in January, and what was the price?
+SELECT product, price FROM Bit_DB.JanSales
+ORDER BY price asc
+LIMIT 1;
+
+
