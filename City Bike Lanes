@@ -1,3 +1,5 @@
+/*I created a table where I could view different streets, their safety rating, size, etc. */
+
 CREATE TABLE BIT_DB.CityBikeLanes (
 id integer primary key,
 year_installed year not null,
@@ -68,8 +70,12 @@ INSERT INTO BIT_DB.CityBikeLanes values(58,2011, 2021, "Beaver", 3.5, 2.5, "no")
 INSERT INTO BIT_DB.CityBikeLanes values(59,2008, 2021,"Kensington",4,4.9,"yes");
 INSERT INTO BIT_DB.CityBikeLanes values(60,2002, 2021,"Mouse",4.5,4.3,"no");
 
+/* I viewed the data in small quantities before I queried it. */
+
 SELECT * FROM CityBikeLanes LIMIT 10;
 SELECT * FROM CityBikeLanes WHERE street='Walnut';
+
+/* I found the average safety for each street. Then I listed the street names, their average safety, as well as the streets that had a safety rating over 4, as these are labeled "safe lanes". */
 
 WITH AVERAGE_SAFETY_CTE AS (
     SELECT street, AVG(safetyrating) AS average_safety_rating
