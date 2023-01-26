@@ -1,0 +1,41 @@
+/* In this project I worked with a dataset called chinook, which represented a digital media store and included tables for artists, albums, media tracks, invoices, and customers.
+*/
+
+
+/*I showed a list of the Customers (their full names, customer ID, and country) who are not in the US. )
+*/
+SELECT * FROM chinook.customers
+LIMIT 10;
+
+SELECT FirstName, LastName, CustomerId, Country 
+FROM chinook.customers
+WHERE Country <> 'USA';
+
+/* I showed just the customers names from Brazil */
+SELECT FirstName, LastName
+FROM chinook.customers
+WHERE Country = 'Brazil';
+
+/*I found the invoices of customers who are from Brazil */
+SELECT cust.FirstName, cust.LastName, inv.InvoiceId, inv.InvoiceDate, inv.BillingCountry
+FROM chinook.invoices inv
+
+LEFT JOIN chinook.customers cust
+ON inv.CustomerId = cust.CustomerId
+WHERE inv.BillingCountry = "Brazil";
+
+/*I showed the employees that are sales agents */
+SELECT * FROM chinook.employees
+WHERE Title = 'Sales Support Agent' ;
+
+/* I found a unique list of billing countries. */
+SELECT distinct (Billingcountry) FROM chinook.invoices;
+
+/*I found the invoices associated with each sales agent*/
+SELECT emp.FirstName, emp.LastName, inv.InvoiceID
+FROM chinook.employees emp
+JOIN chinook.customers cust
+ON emp.employeeId = cust.SupportRepId
+JOIN chinook.invoices inv
+ON cust.CustomerId = inv.CustomerId;
+
