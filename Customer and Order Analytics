@@ -1,19 +1,19 @@
 In this SQL I queried a database to answer various questions on orders placed on varying months.
 
-#How Many orders were placed in January?
+/* I found how many orders were placed in January. */
 SELECT COUNT(orderid)
 FROM BIT_DB.JanSales
 WHERE orderid <> '' 
 AND orderid <> 'Order ID';
 
-#How many of those orders were for an iPhone?
+/* I found how many of those orders were for an iPhone. */
 SELECT COUNT(orderid)
 FROM BIT_DB.JanSales
 WHERE Product="iphone"
 AND orderid <> '' 
 AND orderid <> 'Order ID';
 
-#Select the customer account numbers for all the orders that were placed in February.
+/*#I selected the customer account numbers for all the orders that were placed in February.*/
 
 SELECT distinct acctnum 
 FROM Bit_DB.customers cust; 
@@ -25,27 +25,26 @@ ON customers.order_id=FebSales.orderid
 WHERE order_id <> '' 
 AND order_id <> 'Order ID';
 
-#Which product was the cheapest one sold in January, and what was the price?
+/*I found the product was the cheapest one sold in January, and what was the price was */
 SELECT product, price FROM Bit_DB.JanSales
 ORDER BY price asc
 LIMIT 1;
 
-#What is the total revenue for each product sold in January? 
+/* I found the total revenue for each product sold in January. */
 
 SELECT sum(quantity)*price AS revenue, product 
 FROM BIT_DB.JanSales
 GROUP BY product;
 
 
-
-#Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
+/* I found which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue was. */
 SELECT SUM(quantity)*price AS revenue, product, sum(quantity)
 FROM BIT_DB.FebSales
 WHERE location= "548 Lincoln St, Seattle, WA 98101"
 GROUP BY product;
 
 
-#How many customers ordered more than 2 products at a time in February, and what was the average amount spent for those customers?
+/*I found how many customers ordered more than 2 products at a time in February, and what the average amount spent for those customers was */
 SELECT 
 COUNT (distinct customers.acctnum), 
 AVG(quantity * price) 
@@ -56,7 +55,7 @@ WHERE FebSales.quantity>2
 AND order_id <> '' 
 AND order_id <> 'Order ID';
 
-#List all the products sold in Los Angeles in February, and include how many of each were sold
+/* I listed all the products sold in Los Angeles in February, and included how many of each were sold */
 
 SELECT SUM(quantity), product 
 FROM BIT_DB.FebSales 
